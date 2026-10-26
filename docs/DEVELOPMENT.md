@@ -85,3 +85,5 @@ The user journey test requires the running frontend, connected backend, real Gro
 Unit coverage is deliberately scoped to session/security and formatting helpers. Browser tests cover user workflows. See `QA_REPORT.md` for measured results and remaining deployment checks. Hosted verification is recorded in [production-qa.json](../artifacts/production-qa.json).
 
 The chatbot shows independent cited Q&A results and visible message history; it does not add server-side multi-turn conversation memory.
+
+---
