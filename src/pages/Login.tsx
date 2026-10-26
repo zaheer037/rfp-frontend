@@ -1,0 +1,14 @@
+import {useState,type FormEvent} from 'react';
+import {Link,useNavigate} from 'react-router-dom';
+import {Button,TextField} from '@radix-ui/themes';
+import {ArrowLeftIcon,ArrowRightIcon,EyeIcon,EyeSlashIcon,LockKeyIcon} from '@phosphor-icons/react';
+import {useApp} from '../App';
+import {Logo,Notice,ThemeToggle} from '../components/Common';
+import {post} from '../lib/api';
+import type {User} from '../lib/types';
+export default function Login(){
+ const {setUser,theme,toggle}=useApp(),navigate=useNavigate();
+ const [email,setEmail]=useState('admin@gmail.com'),[password,setPassword]=useState(''),[show,setShow]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState('');
+ async function submit(event:FormEvent){event.preventDefault();if(busy)return;setBusy(true);setError('');try{const result=await post<{user:User}>('auth/login',{email,password});setUser(result.user);navigate('/app');}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
+ return <main className="login-page"><div className="login-nav"><Logo/><ThemeToggle theme={theme} toggle={toggle}/></div><div className="login-grid"><section className="login-story"><span className="eyebrow">THE EVIDENCE IS ALREADY THERE</span><h1>Find the details.<br/>Make the decision.</h1><p>A workspace for the questions that matter before you submit a bid.</p><img src="/images/addendum.webp" alt="Actual Bid1 addendum extending the submission deadline" width="480" height="620"/><span className="image-caption">A single addendum can change your next move.</span></section><section className="login-form"><Link className="text-link" to="/"><ArrowLeftIcon/> Back to home</Link><h2>Your next bid starts here.</h2><p>Sign in to explore the shared research workspace.</p><form onSubmit={submit}><label htmlFor="email">Email address</label><TextField.Root id="email" type="email" autoComplete="username" required size="3" value={email} onChange={e=>setEmail(e.target.value)}/><label htmlFor="password">Password</label><div className="password-field"><TextField.Root id="password" type={show?'text':'password'} autoComplete="current-password" required size="3" value={password} onChange={e=>setPassword(e.target.value)}/><button type="button" aria-label={show?'Hide password':'Show password'} onClick={()=>setShow(!show)}>{show?<EyeSlashIcon/>:<EyeIcon/>}</button></div>{error&&<Notice error>{error}</Notice>}<Button type="submit" size="3" disabled={busy}>{busy?'Signing in...':'Sign in'}<ArrowRightIcon/></Button></form><div className="demo-access"><LockKeyIcon/><div><strong>Try the demo account</strong><p>admin@gmail.com <span>/</span> admin</p><button className="text-link" onClick={()=>{setEmail('admin@gmail.com');setPassword('admin');}}>Fill demo credentials</button></div></div><p className="fine-print">This is a shared demo. Use public documents only.</p></section></div></main>;
+}
