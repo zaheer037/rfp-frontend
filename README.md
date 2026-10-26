@@ -1,8 +1,14 @@
 # RFP Frontend — Bidwell research workspace
 
+**[Open the live demo](https://rfp-frontend-roan.vercel.app/)**
+
+Demo login: `admin@gmail.com` / `admin`.
+
 Created and maintained by [Zaheer](https://github.com/zaheer037).
 
-https://github.com/user-attachments/assets/6ee6aedd-2eb9-45ae-ab5f-1f1527ffc033
+https://github.com/user-attachments/assets/5bf67e6d-3ad5-4c04-986f-ac087b69bea7
+
+[Watch in the browser player](https://rfp-frontend-roan.vercel.app/demo.html) · [Google Drive fallback](https://drive.google.com/file/d/1gLtL16zGsFf8m7f_c9N-Hp1YCBAFMel1/view)
 
 [Backend repository](https://github.com/zaheer037/rfp-intelligence-) · [Full demo download](https://github.com/zaheer037/rfp-intelligence-/blob/main/demo/Bidwell_Demo_with_voiceover.mp4)
 
