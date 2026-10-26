@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-26",
+  "repository": "https://github.com/zaheer037/rfp-frontend",
+  "author": "zaheer037",
+  "commit_grouping": "10 feature-based commits",
+  "workflow_included": true,
+  "node_major": "22.x",
+  "checks": {
+    "lint": true,
+    "unit_integration_tests_passed": 14,
+    "production_build": true,
+    "built_site_browser_checks": 11,
+    "browser_runtime_errors": 0,
+    "backend_connection": "actual local backend via gateway",
+    "new_groq_requests": 0,
+    "vercel_config_instance_valid": true
+  },
+  "deployment": {
+    "target": "Vercel",
+    "backend": "Railway",
+    "backend_url_variable": "BACKEND_URL",
+    "backend_key_variable": "BACKEND_API_KEY",
+    "session_secret_variable": "SESSION_SECRET",
+    "public_site_variable": "VITE_SITE_URL",
+    "deployed_in_this_task": false,
+    "railway_public_url_not_supplied": true
+  },
+  "exclusions": [
+    ".env",
+    "node_modules",
+    "dist",
+    "coverage",
+    "backend source"
+  ],
+  "security": "Exact configured backend/session/Groq/GitHub values and token patterns checked before publishing; demo login is intentionally public."
+}

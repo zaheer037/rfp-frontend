@@ -1,0 +1,13 @@
+{
+  "schema": "https://openapi.vercel.sh/vercel.json",
+  "instance_valid": true,
+  "validator": "Draft4Validator",
+  "schema_self_validation": "Official schema contains a malformed unused trigger definition; instance validation ran directly without modifying the schema or application configuration.",
+  "node_major": "22.x",
+  "required_server_variables": [
+    "BACKEND_URL",
+    "BACKEND_API_KEY",
+    "SESSION_SECRET"
+  ],
+  "public_metadata_variable": "VITE_SITE_URL"
+}

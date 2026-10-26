@@ -1,0 +1,22 @@
+
+> bidwell-web@1.0.0 prebuild
+> tsx scripts/metadata.ts
+
+
+> bidwell-web@1.0.0 build
+> tsc --noEmit && vite build && tsx scripts/prune-css.ts
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 4834 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                             2.04 kB │ gzip:   0.91 kB
+dist/assets/index-ve7bFVjm.css            721.97 kB │ gzip:  89.73 kB
+dist/assets/rolldown-runtime-WkwZ5CU-.js    0.59 kB │ gzip:   0.36 kB
+dist/assets/ArrowLeft.es-W3edmOaq.js        2.92 kB │ gzip:   1.20 kB
+dist/assets/Login-DijsgdLz.js              14.97 kB │ gzip:   4.80 kB
+dist/assets/Workspace-qSQ2OMhH.js         140.07 kB │ gzip:  40.03 kB
+dist/assets/index-CdqyHi1r.js             453.64 kB │ gzip: 149.36 kB
+
+✓ built in 509ms

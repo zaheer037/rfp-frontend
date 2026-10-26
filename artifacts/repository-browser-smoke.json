@@ -1,0 +1,51 @@
+{
+  "base": "http://localhost:4175",
+  "scope": "Built-site smoke with real local backend; no new Groq calls",
+  "checks": [
+    {
+      "name": "Protected workspace redirects to login",
+      "passed": true
+    },
+    {
+      "name": "Demo login opens chat",
+      "passed": true
+    },
+    {
+      "name": "Real backend status through frontend gateway",
+      "passed": true
+    },
+    {
+      "name": "Seven backend agent roles available",
+      "passed": true
+    },
+    {
+      "name": "Real bid library renders",
+      "passed": true
+    },
+    {
+      "name": "Built SPA deep-link refresh works",
+      "passed": true
+    },
+    {
+      "name": "Real filtered backend search through gateway",
+      "passed": true
+    },
+    {
+      "name": "Built dark theme toggle works",
+      "passed": true
+    },
+    {
+      "name": "Mobile layout fits viewport",
+      "passed": true
+    },
+    {
+      "name": "Logout removes data access",
+      "passed": true
+    },
+    {
+      "name": "No browser runtime errors",
+      "passed": true
+    }
+  ],
+  "runtimeErrors": []
+}
